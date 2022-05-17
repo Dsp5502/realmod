@@ -3,4 +3,62 @@
 @tailwind utilities;
 
 body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+.shadow1 {
+  box-shadow: 2px 2.7px 5.6px rgba(0, 0, 0, 0.09),
+    5px 6.9px 14.2px rgba(0, 0, 0, 0.129),
+    10.1px 14px 29.1px rgba(0, 0, 0, 0.161),
+    20.8px 28.8px 59.9px rgba(0, 0, 0, 0.2), 57px 79px 164px rgba(0, 0, 0, 0.29);
+}
+
+/* Button Login */
+.btnLogin {
+  --color: #00c295;
+  font-family: inherit;
+  display: inline-block;
+  width: 100%;
+  line-height: 2.5em;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+}
+
+.btnLogin:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 350px;
+  width: 900px;
+  border-radius: 50%;
+}
+
+.btnLogin:hover {
+  color: #fff;
+}
+
+.btnLogin:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.btnLogin:hover:before {
+  top: -80px;
+  left: -80px;
+}
+
+.btnLogin:active:before {
+  background: #00c295;
+  transition: background 0s;
 }
