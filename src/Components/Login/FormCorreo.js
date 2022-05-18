@@ -30,7 +30,7 @@ const FormCorreo = () => {
       }}
     >
       {({ errors, touched }) => (
-        <Form className='w-full px-2 py-5  '>
+        <Form className='w-full px-2 pt-5 pb-2  '>
           <Field
             name='email'
             placeholder=' Ingresa Tu Correo'

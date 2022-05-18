@@ -2,10 +2,12 @@ import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { loginGoogle } from '../../Redux/Actions/actionLogin';
 import FormCorreo from './FormCorreo';
 
 const FormLogin = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleGoogle = () => {
     dispatch(loginGoogle());
@@ -34,6 +36,18 @@ const FormLogin = () => {
       <hr />
 
       <FormCorreo />
+      <p className='text-sm text-center '>
+        ¿Nuevo en RealMod?{'  '}
+        <span
+          className='text-caribbean-green hover:text-caribbean-green-700 cursor-pointer'
+          onClick={() => {
+            navigate('/registrarse');
+          }}
+        >
+          {' '}
+          Crea tu cuenta ahora
+        </span>
+      </p>
     </div>
   );
 };

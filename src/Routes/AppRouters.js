@@ -2,6 +2,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from '../Components/Login/Login';
+import Register from '../Components/Resgiter/Register';
 import { auth } from '../Firebase/fireBaseConfing';
 import DashRoutersRoute from './DashRoutersRoute';
 import PrivateRouters from './PrivateRouters';
@@ -34,6 +35,14 @@ function AppRouters() {
           element={
             <PublicRouters isLoggedIn={isLoggedIn}>
               <Login />
+            </PublicRouters>
+          }
+        />
+        <Route
+          path='/registrarse'
+          element={
+            <PublicRouters isLoggedIn={isLoggedIn}>
+              <Register />
             </PublicRouters>
           }
         />
